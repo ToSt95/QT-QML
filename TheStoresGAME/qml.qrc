@@ -1,0 +1,35 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Custom_Button.qml</file>
+        <file>nn.qml</file>
+        <file>gameplay.qml</file>
+        <file>menu.qml</file>
+        <file>My_Zoom.qml</file>
+        <file>Custom_EQ.qml</file>
+        <file>stage_3.qml</file>
+        <file>stage_4.qml</file>
+        <file>pick_item.js</file>
+        <file>using_item.js</file>
+    </qresource>
+    <qresource prefix="/img">
+        <file>1.jpg</file>
+        <file>2.jpg</file>
+        <file>3.png</file>
+        <file>5.png</file>
+        <file>6.png</file>
+        <file>4.png</file>
+        <file>tlo.png</file>
+        <file>p1.jpg</file>
+        <file>p2.jpg</file>
+        <file>p3.jpg</file>
+        <file>p4.jpg</file>
+    </qresource>
+    <qresource prefix="/mp3">
+        <file>2.mp3</file>
+        <file>3.mp3</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <file>cr.ttf</file>
+    </qresource>
+</RCC>
