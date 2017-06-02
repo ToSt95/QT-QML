@@ -5,6 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += sql
+QT       += charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -24,11 +26,24 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    dialog.cpp \
+    loginwindow.cpp \
+    chart.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    dialog.h \
+    loginwindow.h \
+    chart.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    dialog.ui \
+    loginwindow.ui
 
 RESOURCES += \
     res.qrc
+
+win32: LIBS += -LD:/Programy/C_MSQL/lib/ -llibmysql
+
+INCLUDEPATH += D:/Programy/C_MSQL/include
+DEPENDPATH += D:/Programy/C_MSQL/include
