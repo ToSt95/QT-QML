@@ -7,6 +7,7 @@ LoginWindow::LoginWindow(QWidget *parent) :
     ui(new Ui::LoginWindow)
 {
     ui->setupUi(this);
+
     db  = QSqlDatabase::addDatabase("QMYSQL");
 
     db.setHostName("sql8.freesqldatabase.com");

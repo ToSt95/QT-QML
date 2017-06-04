@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="res.qrc">
     <normaloff>:/img/ico/calendar.png</normaloff>:/img/ico/calendar.png</iconset>
   </property>
   <property name="styleSheet">
@@ -46,6 +46,205 @@ color:white;
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="3">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="pushButton_7">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+   background-color: rgb(172, 165, 154);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color:white;
+    font: bold 12px;
+    padding: 2px;
+}
+QPushButton:hover:!pressed
+{
+    background-color: rgb(142, 135, 124);
+
+}</string>
+        </property>
+        <property name="text">
+         <string>Account</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="cursor">
+         <cursorShape>OpenHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+   background-color: rgb(172, 165, 154);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color:white;
+    font: bold 12px;
+    padding: 2px;
+}
+QPushButton:hover:!pressed
+{
+    background-color: rgb(142, 135, 124);
+
+}</string>
+        </property>
+        <property name="text">
+         <string>Add post</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>OpenHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+   background-color: rgb(172, 165, 154);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color:white;
+    font: bold 12px;
+    padding: 2px;
+}
+QPushButton:hover:!pressed
+{
+    background-color: rgb(142, 135, 124);
+
+}
+ 
+     
+ 
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>Messages</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_10">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+   background-color: rgb(172, 165, 154);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color:white;
+    font: bold 12px;
+    padding: 2px;
+}
+QPushButton:hover:!pressed
+{
+    background-color: rgb(142, 135, 124);
+
+}
+ 
+     
+ 
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>Class</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="cursor">
+         <cursorShape>OpenHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+   background-color: rgb(172, 165, 154);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color:white;
+    font: bold 12px;
+    padding: 2px;
+}
+QPushButton:hover:!pressed
+{
+    background-color: rgb(142, 135, 124);
+
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>Calendar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="cursor">
+         <cursorShape>OpenHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+   background-color: rgb(172, 165, 154);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color:white;
+    font: bold 12px;
+    padding: 2px;
+}
+QPushButton:hover:!pressed
+{
+    background-color: rgb(142, 135, 124);
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Exit</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color : white;</string>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </item>
@@ -301,6 +500,22 @@ QPushButton:hover:!pressed
           </property>
          </widget>
         </item>
+        <item row="4" column="2">
+         <widget class="QLabel" name="label_17">
+          <property name="styleSheet">
+           <string notr="true">
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color:black;
+    font: bold 10px;
+    padding: 2px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_2">
@@ -308,9 +523,6 @@ QPushButton:hover:!pressed
         <string notr="true">background-color: rgb(255, 255, 255);</string>
        </property>
        <layout class="QGridLayout" name="gridLayout_4">
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit"/>
-        </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label_2">
           <property name="font">
@@ -330,13 +542,18 @@ QPushButton:hover:!pressed
         <item row="1" column="0" colspan="2">
          <widget class="QPlainTextEdit" name="plainTextEdit"/>
         </item>
-        <item row="2" column="0">
-         <widget class="QPushButton" name="pushButton_5">
-          <property name="cursor">
-           <cursorShape>OpenHandCursor</cursorShape>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="lineEdit"/>
+        </item>
+        <item row="4" column="0" colspan="2">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QPushButton" name="pushButton_5">
+            <property name="cursor">
+             <cursorShape>OpenHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton
 {
    background-color: rgb(172, 165, 154);
     border-style: outset;
@@ -353,19 +570,19 @@ QPushButton:hover:!pressed
 }
 
 </string>
-          </property>
-          <property name="text">
-           <string>Add</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QPushButton" name="pushButton_6">
-          <property name="cursor">
-           <cursorShape>OpenHandCursor</cursorShape>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton
+            </property>
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_6">
+            <property name="cursor">
+             <cursorShape>OpenHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton
 {
    background-color: rgb(172, 165, 154);
     border-style: outset;
@@ -382,11 +599,13 @@ QPushButton:hover:!pressed
 }
 
 </string>
-          </property>
-          <property name="text">
-           <string>Clear</string>
-          </property>
-         </widget>
+            </property>
+            <property name="text">
+             <string>Clear</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -472,7 +691,7 @@ QPushButton:hover:!pressed
            <cursorShape>ArrowCursor</cursorShape>
           </property>
           <property name="currentIndex">
-           <number>4</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="tab">
            <attribute name="title">
@@ -607,6 +826,76 @@ color: white;</string>
            <attribute name="title">
             <string>Homework</string>
            </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <widget class="QLabel" name="label_19">
+                <property name="font">
+                 <font>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">
+    border-style: outset;
+   border-width: 1px;
+
+    border-color:black;
+ 
+</string>
+                </property>
+                <property name="text">
+                 <string>Homework</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QListView" name="listView_2"/>
+              </item>
+              <item>
+               <widget class="QTextBrowser" name="textBrowser_2"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <widget class="QTextEdit" name="textEdit"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_9">
+                <property name="styleSheet">
+                 <string notr="true">QPushButton
+{
+   background-color: rgb(172, 165, 154);
+    border-style: outset;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color:white;
+    font: bold 12px;
+    padding: 2px;
+}
+QPushButton:hover:!pressed
+{
+    background-color: rgb(142, 135, 124);
+
+}
+
+</string>
+                </property>
+                <property name="text">
+                 <string>Submit</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="tab_5">
            <attribute name="title">
@@ -619,209 +908,12 @@ color: white;</string>
       </widget>
      </widget>
     </item>
-    <item row="1" column="0" colspan="3">
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QPushButton" name="pushButton_7">
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-   background-color: rgb(172, 165, 154);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color:white;
-    font: bold 12px;
-    padding: 2px;
-}
-QPushButton:hover:!pressed
-{
-    background-color: rgb(142, 135, 124);
-
-}</string>
-        </property>
-        <property name="text">
-         <string>Account</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_3">
-        <property name="cursor">
-         <cursorShape>OpenHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-   background-color: rgb(172, 165, 154);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color:white;
-    font: bold 12px;
-    padding: 2px;
-}
-QPushButton:hover:!pressed
-{
-    background-color: rgb(142, 135, 124);
-
-}</string>
-        </property>
-        <property name="text">
-         <string>Add post</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton">
-        <property name="font">
-         <font>
-          <pointsize>-1</pointsize>
-          <weight>75</weight>
-          <italic>false</italic>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>OpenHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-   background-color: rgb(172, 165, 154);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color:white;
-    font: bold 12px;
-    padding: 2px;
-}
-QPushButton:hover:!pressed
-{
-    background-color: rgb(142, 135, 124);
-
-}
- 
-     
- 
-
-
-</string>
-        </property>
-        <property name="text">
-         <string>Messages</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_10">
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-   background-color: rgb(172, 165, 154);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color:white;
-    font: bold 12px;
-    padding: 2px;
-}
-QPushButton:hover:!pressed
-{
-    background-color: rgb(142, 135, 124);
-
-}
- 
-     
- 
-
-
-</string>
-        </property>
-        <property name="text">
-         <string>Class</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="cursor">
-         <cursorShape>OpenHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-   background-color: rgb(172, 165, 154);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color:white;
-    font: bold 12px;
-    padding: 2px;
-}
-QPushButton:hover:!pressed
-{
-    background-color: rgb(142, 135, 124);
-
-}
-
-</string>
-        </property>
-        <property name="text">
-         <string>Calendar</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_4">
-        <property name="cursor">
-         <cursorShape>OpenHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-   background-color: rgb(172, 165, 154);
-    border-style: outset;
-    border-width: 1px;
-    border-radius: 10px;
-    border-color:white;
-    font: bold 12px;
-    padding: 2px;
-}
-QPushButton:hover:!pressed
-{
-    background-color: rgb(142, 135, 124);
-
-}
-</string>
-        </property>
-        <property name="text">
-         <string>Exit</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QLabel" name="label">
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color : white;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>
