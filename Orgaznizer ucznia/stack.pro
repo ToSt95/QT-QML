@@ -47,3 +47,6 @@ win32: LIBS += -LD:/Programy/C_MSQL/lib/ -llibmysql
 
 INCLUDEPATH += D:/Programy/C_MSQL/include
 DEPENDPATH += D:/Programy/C_MSQL/include
+
+DISTFILES += \
+    img/img/2png.png

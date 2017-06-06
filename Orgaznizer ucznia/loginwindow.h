@@ -16,6 +16,7 @@ public:
     explicit LoginWindow(QWidget *parent = 0);
     ~LoginWindow();
     QString idLogowania;
+    QSqlDatabase db;
 private slots:
     void on_pushButton_clicked();
     void logowanie();
@@ -23,7 +24,7 @@ private slots:
 
 private:
     Ui::LoginWindow *ui;
-    QSqlDatabase db;
+
     QSqlQueryModel *qu;
 
 };

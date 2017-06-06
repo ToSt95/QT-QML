@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>img/ico/calendar.png</file>
+        <file>img/img/tt.png</file>
+        <file>img/img/2.png</file>
+        <file>img/img/3.jpg</file>
     </qresource>
 </RCC>

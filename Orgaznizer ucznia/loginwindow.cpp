@@ -56,11 +56,11 @@ void LoginWindow::logowanie()
                 idLogowania = qwr.value(0).toString();
                 MainWindow *win  = new MainWindow(0,idLogowania);
 
-                win->setFixedSize(QSize(840, 480));
+                win->setFixedSize(QSize(940, 580));
 
                 win->setWindowTitle("Organizer Alpha");
-
                 this->close();
+
                 win->show();
 
             }
