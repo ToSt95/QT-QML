@@ -15,17 +15,23 @@ class LoginWindow : public QMainWindow
 public:
     explicit LoginWindow(QWidget *parent = 0);
     ~LoginWindow();
-    QString idLogowania;
-    QSqlDatabase db;
+
+    void setOk(bool x);
+    QString getIdLogowania();
+
+
 private slots:
     void on_pushButton_clicked();
     void logowanie();
 
 
+
+
 private:
     Ui::LoginWindow *ui;
-
     QSqlQueryModel *qu;
+    bool ok = false;
+    QString idLogowania;
 
 };
 

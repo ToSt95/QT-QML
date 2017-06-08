@@ -7,6 +7,8 @@
 #include <QMessageBox>
 #include <QSqlQueryModel>
 
+
+
 namespace Ui {
 class MainWindow;
 }
@@ -16,7 +18,9 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    QString idLog;                                              //USER ID
+    QString idLog;                                              //USER ID 
+    QString nazwisko_m;                                         //USER SURNAME
+    QString imie_m;                                             //USER NAME
     QString imie_nazwisko;                                      //USER NAME SURNAME
     int licznik_timer = 10;                                     //TIMER COUNTER USED TO BLOCKING ADD BUTTON FOR 10s
 
@@ -25,8 +29,10 @@ public:
     void update_messages();                                     //UPDATE POSTS
     void p_update_messages();                                   //UPDATE PRIVATE MESSAGES
     void grades_update();                                       //UPDATE GRADES
+    void loading_user_data(QString id);                         //UPDATE USER DATA
 
     ~MainWindow();
+protected:
 
 private slots:
 
@@ -40,7 +46,6 @@ private slots:
     void on_pushButton_6_clicked();                              //"Sent"->"Clear" BUTTON
     void on_pushButton_13_clicked();                             //"Messages"->private->"Delete" BUTTON
     void on_pushButton_14_clicked();                             //"Messages"->private->"Refresh" BUTTON
-    void on_pushButton_8_clicked();                              //"Choose file" BUTTON
     void on_pushButton_10_clicked();                             //"Class" BUTTON
     void on_pushButton_9_clicked();                              //"Submit" homework BUTTON
     void on_pushButton_12_clicked();                             //"Messages"->post->"Delete" BUTTON
@@ -54,6 +59,11 @@ private slots:
     void show_time();
     void odliczanie();
     void odblokuj_dodawanie();
+
+
+    void on_tableView_doubleClicked(const QModelIndex &index);
+
+    void on_pushButton_8_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -73,7 +83,6 @@ private:
     QStringList id_homework;
     QStringList rozw_home;
     QString user_class;
-
 
 
 };

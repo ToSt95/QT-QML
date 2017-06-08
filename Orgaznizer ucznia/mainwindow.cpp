@@ -8,12 +8,15 @@
 #include <QFileDialog>
 #include <QDebug>
 
+
+
 MainWindow::MainWindow(QWidget *parent,QString x) :
     QMainWindow(parent),
     idLog(x),
     ui(new Ui::MainWindow)
 {
      ui->setupUi(this); //wskaźnik na elementy user interface
+
 
     //ODŚWIEŻANIE ZEGARA
     QTimer *timer = new QTimer(this);
@@ -49,19 +52,38 @@ MainWindow::MainWindow(QWidget *parent,QString x) :
     {
         if(qwr.next())
         {
-            ui->label_5->setText(qwr.value(0).toString());
-            ui->label_7->setText(qwr.value(1).toString());
-            ui->label_9->setText(qwr.value(2).toString());
-            ui->label_11->setText(qwr.value(3).toString());
+            ui->label_4->setText(ui->label_4->text()+" "+qwr.value(0).toString());
+            ui->label_6->setText(ui->label_6->text()+" "+qwr.value(1).toString());
+            ui->label_8->setText(ui->label_8->text()+" "+qwr.value(2).toString());
+            ui->label_10->setText(ui->label_10->text()+" "+qwr.value(3).toString());
             user_class = qwr.value(4).toString();
+            imie_m = qwr.value(0).toString();
+            nazwisko_m = qwr.value(1).toString();
             imie_nazwisko = qwr.value(0).toString() +" "+qwr.value(1).toString();
-            ui->label_17->setText(qwr.value(7).toString());
+            ui->label_12->setText(ui->label_12->text()+" "+qwr.value(7).toString());
+            ui->label_5->setText("<h1>"+qwr.value(7).toString()+"</h1>");
         }
         else
         {
             ui->label_24->setText("Information loading error");
         }
     }
+
+    //USTAWIENIE OBRAZU SUDENTA
+
+    if(imie_m[imie_m.size()-1] == "a")
+    {
+        QPixmap std(":/img/img/smile_T.png");
+        ui->label_3->setPixmap(std);
+    }
+    else
+    {
+        QPixmap std(":/img/img/23.png");
+        ui->label_3->setPixmap(std);
+    }
+
+    ui->pushButton_8->hide();
+
 
     //WCZYTANIE WIADOMOSCI I PRYWATNYCH WIADOMOSCI
     p_update_messages();
@@ -72,8 +94,9 @@ MainWindow::MainWindow(QWidget *parent,QString x) :
 
     //LISTA UCZNIOW
     students = new QSqlQueryModel(this);
-    students->setQuery("SELECT Imie,Nazwisko FROM uczniowie WHERE Klasy_idKlasa='"+qwr.value(4).toString()+"' ");
+    students->setQuery("SELECT Imie,Nazwisko FROM uczniowie WHERE Klasy_idKlasa='"+qwr.value(4).toString()+"' ORDER BY Nazwisko ASC");
     ui->tableView->setModel(students);
+
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
     //OBECNOSC
@@ -111,8 +134,6 @@ MainWindow::MainWindow(QWidget *parent,QString x) :
    {
           while(qwr_home.next())
           {
-            qDebug() << qwr_home.value(7).toString();
-
             tittle_homework.append("Subject: "+qwr_home.value(7).toString()+" | Deadline: "+qwr_home.value(3).toString());
             homework.append(qwr_home.value(1).toString());
             id_homework.append(qwr_home.value(0).toString());
@@ -134,6 +155,7 @@ MainWindow::MainWindow(QWidget *parent,QString x) :
    ui->tableView_2->setModel(plan);
    ui->tableView_2->verticalHeader()->hide();
    ui->tableView_2->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
 }
 MainWindow::~MainWindow()
 {
@@ -145,6 +167,7 @@ MainWindow::~MainWindow()
     delete timer3;
     delete plan;
     delete students;
+
 }
 
 //POTWIERDZENIE WYJŚCIA Z APP
@@ -272,7 +295,7 @@ void MainWindow::on_listView_clicked(const QModelIndex &index)
 {
     ui->textBrowser->setText(messages.at(index.row()));
 }
-//WYBIERANIE ZDJECIA
+/*//WYBIERANIE ZDJECIA
 void MainWindow::on_pushButton_8_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,tr("Open file"),"C://","All files (*.*)");
@@ -282,7 +305,7 @@ void MainWindow::on_pushButton_8_clicked()
     ui->label_3->setPixmap(image.scaled(w,h));
     QSqlQuery inst;
     inst.exec("INSERT INTO uczniowie (img) VALUES ("+filename+") WHERE idUczniowie='"+idLog+"'" );
-}
+}*/
 //UPDATE WIADOMOSCI
 void MainWindow::update_messages()
 {
@@ -313,7 +336,7 @@ void MainWindow::p_update_messages()
 
 
     QSqlQuery usr3;
-    if(usr3.exec("SELECT Tytul,Tresc FROM prywatneWiadomosci WHERE oImie='"+ui->label_5->text()+"' and oNazwisko='"+ui->label_7->text()+"'"))
+    if(usr3.exec("SELECT Tytul,Tresc FROM prywatneWiadomosci WHERE oImie='"+imie_m+"' and oNazwisko='"+nazwisko_m+"'"))
     {
         while(usr3.next())
         {
@@ -469,7 +492,7 @@ void MainWindow::grades_update()
        }
        else
        {
-           ui->label_5->setText("Information loading error. Please restart application.");
+           ui->label_24->setText("Information loading error. Please restart application.");
        }
     }
     QString grades_string="";
@@ -486,11 +509,98 @@ void MainWindow::grades_update()
 
           avr = avr/count;
           ui->label_20->setText(grades_string);
-          ui->label_15->setText("Average: "+QString::number(avr));
+          ui->label_20->setText("Subject: " +subject_name+"\n\n\n"+ui->label_20->text()+"\n\nAverage: "+QString::number(avr));
     }
     else
     {
-        ui->label_5->setText("Information loading error. Please restart application.");
+        ui->label_24->setText("Information loading error. Please restart application.");
     }
 
+}
+
+//WCZYTYWANIE DANYCH STUDENTA
+void MainWindow::loading_user_data(QString id)
+{
+    QSqlQuery qwr;
+    if(qwr.exec("SELECT Imie,Nazwisko,e_mail,nr_tel,Klasy_idKlasa,klasy.Nazwa FROM uczniowie JOIN klasy ON uczniowie.Klasy_idKlasa = klasy.idKlasa WHERE idUczniowie='"+id+"'"))
+    {
+        if(qwr.next())
+        {
+            ui->label_4->setText("Name: "+qwr.value(0).toString());
+            ui->label_6->setText("Surname: "+qwr.value(1).toString());
+            ui->label_8->setText("E-mail: "+qwr.value(2).toString());
+            ui->label_10->setText("Phone: "+qwr.value(3).toString());
+        }
+        else
+        {
+            ui->label_24->setText("Information loading error");
+        }
+     }
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+//WYSWIETLANIE DANYCH STUDENTA PO KLIKNIECIU NA LISCIE
+void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
+{
+    int r = index.row();
+    QString id;
+    QModelIndex i_name = ui->tableView->model()->index(r,0);
+    QModelIndex i_surname = ui->tableView->model()->index(r,1);
+    QString name = ui->tableView->model()->data(i_name).toString();
+    QString surname = ui->tableView->model()->data(i_surname).toString();
+
+
+    QSqlQuery qwr;
+    if(qwr.exec("SELECT idUczniowie FROM uczniowie  WHERE Imie='"+name+"' AND Nazwisko='"+surname+"'"))
+    {
+        if(qwr.next())
+        {
+            id = qwr.value(0).toString();
+        }
+        else
+        {
+            ui->label_24->setText("Information loading error");
+        }
+     }
+    if(id != idLog && ui->label_4->text() != "Name: "+name )
+    {
+        if(name[name.size()-1] == "a")
+        {
+            QPixmap std(":/img/img/smile_T.png");
+            ui->label_3->setPixmap(std);
+        }
+        else
+        {
+            QPixmap std(":/img/img/23.png");
+            ui->label_3->setPixmap(std);
+        }
+
+        loading_user_data(id);
+        ui->pushButton_8->show();
+    }
+    else
+    {
+        ui->stackedWidget->setCurrentIndex(1);
+
+    }
+
+
+}
+//POWROT DO SWOJEGO PROFILU
+void MainWindow::on_pushButton_8_clicked()
+{
+    loading_user_data(idLog);
+    if(imie_m[imie_m.size()-1] == "a")
+    {
+        QPixmap std(":/img/img/smile_T.png");
+        ui->label_3->setPixmap(std);
+    }
+    else
+    {
+        QPixmap std(":/img/img/23.png");
+        ui->label_3->setPixmap(std);
+    }
+
+     ui->pushButton_8->hide();
 }

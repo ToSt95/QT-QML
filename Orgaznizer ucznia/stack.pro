@@ -49,4 +49,5 @@ INCLUDEPATH += D:/Programy/C_MSQL/include
 DEPENDPATH += D:/Programy/C_MSQL/include
 
 DISTFILES += \
-    img/img/2png.png
+    img/img/2png.png \
+    img/img/23.png

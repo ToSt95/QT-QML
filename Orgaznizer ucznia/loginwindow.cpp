@@ -8,21 +8,15 @@ LoginWindow::LoginWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    db  = QSqlDatabase::addDatabase("QMYSQL");
-
-    db.setHostName("sql8.freesqldatabase.com");
-    db.setDatabaseName("sql8177950");
-    db.setUserName("sql8177950");
-    db.setPassword("69IrLi5uwH");
-    db.setPort(3306);
-
-    if(!db.open())
+    if(ok == true)
     {
         ui->label_3->setText("<font color='red'>[Błąd] Błąd połączenia z bazą danych</font>");
+
     }
     else
     {
-        ui->label_3->setText("<font color='green'>[Połączono] Zaloguj by zobaczyć listę uczniów </font>");
+        ui->label_3->setText("<font color='green'>[Połączono]</font>");
+
     }
 
 }
@@ -30,6 +24,7 @@ LoginWindow::LoginWindow(QWidget *parent) :
 LoginWindow::~LoginWindow()
 {
     delete ui;
+
 
 }
 
@@ -44,8 +39,6 @@ void LoginWindow::logowanie()
     {
         QString log = ui->lineEdit->text();
         QString pass = ui->lineEdit_2->text();
-
-
         QSqlQuery qwr;
 
 
@@ -55,14 +48,10 @@ void LoginWindow::logowanie()
             {
                 idLogowania = qwr.value(0).toString();
                 MainWindow *win  = new MainWindow(0,idLogowania);
-
                 win->setFixedSize(QSize(940, 580));
-
                 win->setWindowTitle("Organizer Alpha");
                 this->close();
-
                 win->show();
-
             }
 
             else
@@ -73,9 +62,16 @@ void LoginWindow::logowanie()
 
         }
 
-
-
-
     }
-
 }
+
+void LoginWindow::setOk(bool x)
+{
+    this->ok = x;
+}
+
+QString LoginWindow::getIdLogowania()
+{
+    return idLogowania;
+}
+
