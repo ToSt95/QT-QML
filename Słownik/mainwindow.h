@@ -2,9 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlQueryModel>
+#include "download.h"
 namespace Ui {
 class MainWindow;
 }
@@ -17,15 +15,12 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-private:
-    Ui::MainWindow *ui;
-    QSqlDatabase db;
-    QSqlQueryModel *qu;
-    int islog = 0;
-public:
-   void logowanie();
 private slots:
     void on_pushButton_clicked();
+
+private:
+    Ui::MainWindow *ui;
+    Download *set;
 };
 
 #endif // MAINWINDOW_H

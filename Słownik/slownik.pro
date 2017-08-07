@@ -1,15 +1,16 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2017-05-16T10:30:00
+# Project created by QtCreator 2017-08-07T15:34:47
 #
 #-------------------------------------------------
 
 QT       += core gui
-QT       += sql
+QT       += network
+QT       += testlib
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = SQL_log
+TARGET = slownik
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -25,15 +26,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    download.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    download.h
 
 FORMS    += mainwindow.ui
-
-
-
-win32: LIBS += -LD:/Programy/C_MSQL/lib/ -llibmysql
-
-INCLUDEPATH += D:/Programy/C_MSQL/include
-DEPENDPATH += D:/Programy/C_MSQL/include
