@@ -34,7 +34,7 @@ void MainWindow::on_pushButton_clicked()
        lang = "en-pl";
     }
     QString word = ui->lineEdit->text();
-    set->makeRequest("https://translate.yandex.net/api/v1.5/tr/translate?key=trnsl.1.1.20170807T114857Z.49f74454757528bf.553e23c749de1ba6eabe8bc05945c731127c4cbb&text="+word+"&lang="+lang+"&[format=html]");
+    set->makeRequest("https://translate.yandex.net/api/v1.5/tr/translate?key=//keyAPIhere//"+word+"&lang="+lang+"&[format=html]");
     QTest::qWait(1000);
     ui->textBrowser->setText(set->get_result());
 
