@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>IMG/blank.jpg</file>
+        <file>IMG/circle.png</file>
+        <file>IMG/cross.png</file>
+        <file>BoardField.qml</file>
+    </qresource>
+</RCC>

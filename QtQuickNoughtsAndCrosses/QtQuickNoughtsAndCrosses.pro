@@ -1,14 +1,10 @@
 TEMPLATE = app
+
 QT += qml quick
 CONFIG += c++11
 
-SOURCES += main.cpp
-
-
-
-
-
-
+SOURCES += main.cpp \
+    gamemanager.cpp
 
 RESOURCES += qml.qrc
 
@@ -34,5 +30,5 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-DISTFILES += \
-    test.js
+HEADERS += \
+    gamemanager.h

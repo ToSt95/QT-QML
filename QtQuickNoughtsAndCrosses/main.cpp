@@ -1,15 +1,13 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include "gamemanager.h"
 
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-
-
-    QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    GameManager gameManager;
 
     return app.exec();
 }

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>translatorGUI</class>
+ <widget class="QWidget" name="translatorGUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>479</width>
+    <height>308</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QLabel" name="tittleLabel_1">
+     <property name="font">
+      <font>
+       <family>Segoe UI Semibold</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>NORMAL TEXT</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPlainTextEdit" name="normalTextEdit">
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid;
+border-color: white;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="NormalTextButtonsLayout">
+     <item>
+      <widget class="QPushButton" name="translateToMorseButton">
+       <property name="text">
+        <string>Translate to morse code</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="loadNormalTextButton">
+       <property name="text">
+        <string>Load from file</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saveNormalTextButton">
+       <property name="text">
+        <string>Save to file</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="tittleLabel_2">
+     <property name="font">
+      <font>
+       <family>Segoe UI Semibold</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>MORSE CODE</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPlainTextEdit" name="morseCodeTextEdit">
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px dotted;
+border-color: white;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="MorseCodeButtonsLayout">
+     <item>
+      <widget class="QPushButton" name="translateToNormalTextButton">
+       <property name="text">
+        <string>Translate to normal text</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="loadMorseCodeTextButton">
+       <property name="text">
+        <string>Load from file</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saveMorseCodeTextButton">
+       <property name="text">
+        <string>Save to file</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
